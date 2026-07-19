@@ -176,6 +176,7 @@ export const references: Reference[] = [
   { id: 4, title: '구청 민원실 리모델링', category: 'public', categoryLabel: '관공서·기관', place: '울산 동구', product: '내추럴 오크 50mm', date: '2026.05', image: '/images/ref-public.png' },
   { id: 5, title: '북구 신축 아파트 침실', category: 'home', categoryLabel: '주거공간', place: '울산 북구', product: '다크 월넛 25mm', date: '2026.04', image: '/images/ref-bedroom.png' },
   { id: 6, title: '레스토랑 통창 시공', category: 'biz', categoryLabel: '상업공간', place: '울산 남구 달동', product: '와이드 티크 50mm', date: '2026.04', image: '/images/ref-restaurant.png' },
+  { id: 7, title: '언양 할리스커피 썬스크린 시공', category: 'biz', categoryLabel: '상업공간', place: '울산 울주군 언양읍', product: '썬스크린 롤스크린', date: '2026.07', image: '/images/ref-ulyang-hollys.jpg' },
 ]
 
 export const history = [
