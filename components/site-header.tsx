@@ -32,12 +32,12 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" aria-label="한일우드블라인드 홈">
+        <Link href="/" className="flex items-center gap-2" aria-label="한일블라인드&커튼 홈">
           <span className="flex size-9 items-center justify-center rounded-md bg-primary text-primary-foreground font-serif text-lg font-bold md:size-10">
             한
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-serif text-base font-bold text-foreground md:text-lg">한일우드블라인드</span>
+            <span className="font-serif text-base font-bold text-foreground md:text-lg">한일블라인드&커튼</span>
             <span className="text-[10px] tracking-wide text-muted-foreground md:text-xs">SINCE {company.established} · 울산 자체공장</span>
           </span>
         </Link>

@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* Strengths */}
       <section className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24">
         <div className="mb-12 text-center">
-          <p className="text-sm font-semibold tracking-widest text-accent">WHY 한일우드블라인드</p>
+          <p className="text-sm font-semibold tracking-widest text-accent">WHY 한일블라인드&커튼</p>
           <h2 className="mt-2 font-serif text-2xl font-bold text-foreground md:text-3xl text-balance">
             30년을 이어온 세 가지 약속
           </h2>

@@ -4,8 +4,8 @@ import { PageHero } from '@/components/page-hero'
 import { company } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: '오시는길 | 한일우드블라인드',
-  description: `${company.address}에 위치한 한일우드블라인드 제조공장 오시는길 안내입니다.`,
+  title: '오시는길 | 한일블라인드&커튼',
+  description: `${company.address}에 위치한 한일블라인드&커튼 제조공장 오시는길 안내입니다.`,
 }
 
 export default function LocationPage() {
@@ -25,7 +25,7 @@ export default function LocationPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
         <div className="overflow-hidden rounded-lg border border-border">
           <iframe
-            title="한일우드블라인드 위치 지도"
+            title="한일블라인드&커튼 위치 지도"
             src={mapSrc}
             className="h-[380px] w-full md:h-[460px]"
             loading="lazy"

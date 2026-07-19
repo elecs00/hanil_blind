@@ -4,8 +4,8 @@ import { SectionTabs } from '@/components/about/section-tabs'
 import { company, history } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: '회사소개 | 한일우드블라인드',
-  description: '1994년 창업 이래 30년, 울산 자체 제조공장에서 우드블라인드를 직접 만들고 시공해온 한일우드블라인드를 소개합니다.',
+  title: '회사소개 | 한일블라인드&커튼',
+  description: '1994년 창업 이래 30년, 울산 자체 제조공장에서 우드블라인드를 직접 만들고 시공해온 한일블라인드&커튼을 소개합니다.',
 }
 
 const factoryImages = [

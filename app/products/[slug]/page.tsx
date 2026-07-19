@@ -17,9 +17,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const product = products.find((p) => p.slug === slug)
-  if (!product) return { title: '제품을 찾을 수 없습니다 | 한일우드블라인드' }
+  if (!product) return { title: '제품을 찾을 수 없습니다 | 한일블라인드&커튼' }
   return {
-    title: `${product.name} | 한일우드블라인드`,
+    title: `${product.name} | 한일블라인드&커튼`,
     description: product.description,
   }
 }

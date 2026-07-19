@@ -5,8 +5,8 @@ import { FaqAccordion } from '@/components/support/faq-accordion'
 import { notices } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: '고객센터 | 한일우드블라인드',
-  description: '한일우드블라인드 공지사항과 자주 묻는 질문을 확인하세요.',
+  title: '고객센터 | 한일블라인드&커튼',
+  description: '한일블라인드&커튼 공지사항과 자주 묻는 질문을 확인하세요.',
 }
 
 export default function SupportPage() {

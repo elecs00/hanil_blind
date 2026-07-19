@@ -4,8 +4,8 @@ import { PageHero } from '@/components/page-hero'
 import { ReferenceGallery } from '@/components/references/reference-gallery'
 
 export const metadata: Metadata = {
-  title: '시공사례 | 한일우드블라인드',
-  description: '주거공간, 상업공간, 관공서까지. 30년간 축적된 한일우드블라인드의 다양한 우드블라인드 시공사례를 확인하세요.',
+  title: '시공사례 | 한일블라인드&커튼',
+  description: '주거공간, 상업공간, 관공서까지. 30년간 축적된 한일블라인드&커튼의 다양한 우드블라인드 시공사례를 확인하세요.',
 }
 
 export default function ReferencesPage() {

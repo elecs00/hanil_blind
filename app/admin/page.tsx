@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Lock } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: '관리자 | 한일우드블라인드',
+  title: '관리자 | 한일블라인드&커튼',
   robots: { index: false, follow: false },
 }
 

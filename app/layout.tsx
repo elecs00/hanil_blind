@@ -21,7 +21,7 @@ const notoSerifKr = Noto_Serif_KR({
 })
 
 export const metadata: Metadata = {
-  title: '한일우드블라인드 | 30년 전통 울산 우드블라인드 제조공장',
+  title: '한일블라인드&커튼 | 30년 전통 울산 우드블라인드 제조공장',
   description:
     '울산 남구 달동에 위치한 30년 전통의 우드블라인드 자체 제조공장. 맞춤 제작부터 직접 시공까지 원스톱으로 프리미엄 우드블라인드를 제공합니다.',
   generator: 'v0.app',

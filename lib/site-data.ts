@@ -1,5 +1,5 @@
 export const company = {
-  name: '한일우드블라인드',
+  name: '한일블라인드&커튼',
   tagline: '30년 전통, 자체 제조공장의 프리미엄 우드블라인드',
   ceo: '박재덕',
   bizNo: '610-12-34567',
@@ -179,7 +179,7 @@ export const references: Reference[] = [
 ]
 
 export const history = [
-  { year: '1994', text: '한일우드블라인드 창업, 울산 남구 소재 공장 설립' },
+  { year: '1994', text: '한일블라인드&커튼 창업, 울산 남구 소재 공장 설립' },
   { year: '2001', text: '자체 도장 설비 도입, 원목 가공 라인 확장' },
   { year: '2008', text: '관공서·기관 납품 실적 확대, 시공팀 정규화' },
   { year: '2015', text: '공장 이전 및 증설 (울산 남구 달동)' },

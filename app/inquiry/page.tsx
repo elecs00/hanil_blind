@@ -6,7 +6,7 @@ import { InquiryForm } from '@/components/inquiry/inquiry-form'
 import { company } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: '견적문의 | 한일우드블라인드',
+  title: '견적문의 | 한일블라인드&커튼',
   description: '온라인으로 간편하게 우드블라인드 견적을 문의하세요. 전화 및 카카오톡 상담도 가능합니다.',
 }
 
