@@ -2,9 +2,7 @@
 
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { Upload, CheckCircle2, Paperclip } from 'lucide-react'
-
-const MAX_SIZE = 10 * 1024 * 1024 // 10MB
+import { CheckCircle2 } from 'lucide-react'
 
 const inputClass =
   'w-full rounded-md border border-border bg-background px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary focus:ring-2 focus:ring-ring/30'
@@ -15,27 +13,39 @@ export function InquiryForm() {
   const presetProduct = params.get('product') ?? ''
 
   const [submitted, setSubmitted] = useState(false)
-  const [fileName, setFileName] = useState<string>('')
-  const [fileError, setFileError] = useState<string>('')
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
-  function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    setFileError('')
-    if (!file) {
-      setFileName('')
-      return
-    }
-    if (file.size > MAX_SIZE) {
-      setFileError('파일 용량은 최대 10MB까지 첨부할 수 있습니다.')
-      setFileName('')
-      e.target.value = ''
-      return
-    }
-    setFileName(file.name)
-  }
-
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setError('')
+    setSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+    const payload = {
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      region: formData.get('region'),
+      location: formData.get('location'),
+      product: formData.get('product'),
+      size: formData.get('size'),
+      message: formData.get('message'),
+      consent: formData.get('consent') === 'on',
+    }
+
+    const res = await fetch('/api/inquiries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+
+    setSubmitting(false)
+
+    if (!res.ok) {
+      setError('문의 접수 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.')
+      return
+    }
+
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -121,42 +131,23 @@ export function InquiryForm() {
         />
       </div>
 
-      {/* File attach */}
-      <div className="mt-5">
-        <span className={labelClass}>현장 사진 · 도면 첨부</span>
-        <label
-          htmlFor="file"
-          className="flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-border bg-background px-4 py-4 text-sm text-muted-foreground transition-colors hover:border-primary/50"
-        >
-          <Upload className="size-5 shrink-0 text-primary" />
-          <span className="flex-1">
-            {fileName ? (
-              <span className="flex items-center gap-1.5 text-foreground">
-                <Paperclip className="size-4" /> {fileName}
-              </span>
-            ) : (
-              '파일 선택 (jpg, png, pdf / 최대 10MB)'
-            )}
-          </span>
-          <input id="file" name="file" type="file" accept=".jpg,.jpeg,.png,.pdf" onChange={handleFile} className="sr-only" />
-        </label>
-        {fileError && <p className="mt-1.5 text-xs text-destructive">{fileError}</p>}
-      </div>
-
       {/* Consent */}
       <label className="mt-6 flex items-start gap-2.5 rounded-md bg-secondary/50 p-4 text-sm text-muted-foreground">
-        <input type="checkbox" required className="mt-0.5 size-4 accent-primary" />
+        <input type="checkbox" name="consent" required className="mt-0.5 size-4 accent-primary" />
         <span>
           <span className="font-medium text-foreground">[필수]</span> 개인정보 수집·이용에 동의합니다. 수집한 정보는 견적 상담
           목적으로만 사용되며 관련 법령에 따라 보관 후 파기됩니다.
         </span>
       </label>
 
+      {error && <p className="mt-4 text-sm text-destructive">{error}</p>}
+
       <button
         type="submit"
-        className="mt-6 w-full rounded-md bg-primary py-4 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        disabled={submitting}
+        className="mt-6 w-full rounded-md bg-primary py-4 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
       >
-        견적 문의 신청하기
+        {submitting ? '접수 중...' : '견적 문의 신청하기'}
       </button>
     </form>
   )
