@@ -158,8 +158,11 @@ export const products: Product[] = [
   },
 ]
 
+export type ReferenceBlock = { type: 'text'; text: string } | { type: 'image'; src: string; caption?: string }
+
 export type Reference = {
   id: number
+  slug?: string
   title: string
   category: 'home' | 'biz' | 'public'
   categoryLabel: string
@@ -167,6 +170,7 @@ export type Reference = {
   product: string
   date: string
   image: string
+  body?: ReferenceBlock[]
 }
 
 export const references: Reference[] = [
@@ -176,7 +180,40 @@ export const references: Reference[] = [
   { id: 4, title: '구청 민원실 리모델링', category: 'public', categoryLabel: '관공서·기관', place: '울산 동구', product: '내추럴 오크 50mm', date: '2026.05', image: '/images/ref-public.png' },
   { id: 5, title: '북구 신축 아파트 침실', category: 'home', categoryLabel: '주거공간', place: '울산 북구', product: '다크 월넛 25mm', date: '2026.04', image: '/images/ref-bedroom.png' },
   { id: 6, title: '레스토랑 통창 시공', category: 'biz', categoryLabel: '상업공간', place: '울산 남구 달동', product: '와이드 티크 50mm', date: '2026.04', image: '/images/ref-restaurant.png' },
-  { id: 7, title: '언양 할리스커피 썬스크린 시공', category: 'biz', categoryLabel: '상업공간', place: '울산 울주군 언양읍', product: '썬스크린 롤스크린', date: '2026.07', image: '/images/ref-ulyang-hollys.jpg' },
+  {
+    id: 7,
+    slug: 'ulyang-hollys-sunscreen',
+    title: '언양 할리스커피 썬스크린 시공',
+    category: 'biz',
+    categoryLabel: '상업공간',
+    place: '울산 울주군 언양읍',
+    product: '썬스크린 롤스크린 · 미니 알루미늄 블라인드',
+    date: '2026.07',
+    image: '/images/ref-ulyang-hollys.jpg',
+    body: [
+      {
+        type: 'text',
+        text: '언양읍 할리스커피 매장은 1~2층을 잇는 층고 높은 통창 구조라 채광은 좋지만, 오후에는 직사광선과 눈부심이 심해 손님들이 창가 자리를 피하는 문제가 있었습니다. 매장 분위기를 해치지 않으면서 눈부심만 잡아달라는 요청으로 이번 시공을 진행했습니다.',
+      },
+      { type: 'image', src: '/images/ref-ulyang-hollys.jpg', caption: '메인 홀 통창 전체 시공 모습' },
+      {
+        type: 'text',
+        text: '가장 넓은 통창 구간에는 썬스크린 롤스크린을 적용했습니다. 완전히 시야를 가리는 암막 대신, 빛과 바깥 풍경은 은은하게 통과시키면서 자외선과 눈부심만 줄여주는 스크린 원단을 선택해 카페 특유의 개방감을 그대로 살렸습니다.',
+      },
+      { type: 'image', src: '/images/ref-ulyang-hollys-2.jpg', caption: '창가 좌석에서 바라본 시공 모습, 바깥 풍경이 은은하게 비칩니다' },
+      { type: 'image', src: '/images/ref-ulyang-hollys-3.jpg', caption: '2층 좌석에서 본 통창 썬스크린' },
+      {
+        type: 'text',
+        text: '개별 룸과 창구 쪽처럼 폭이 좁은 창에는 롤스크린 대신 미니 알루미늄 블라인드를 시공했습니다. 슬랫 각도를 조절해 프라이버시와 채광을 동시에 확보할 수 있어, 손님들이 개별적으로 밝기를 조절할 수 있도록 했습니다.',
+      },
+      { type: 'image', src: '/images/ref-ulyang-hollys-4.jpg', caption: '개별 룸 창문에 시공한 미니 블라인드' },
+      { type: 'image', src: '/images/ref-ulyang-hollys-5.jpg', caption: '미니 블라인드 클로즈업' },
+      {
+        type: 'text',
+        text: '시공 후 오후 시간대 눈부심 관련 불편이 크게 줄었고, 창가 좌석 이용률도 눈에 띄게 늘었다는 후기를 받았습니다. 매장 분위기와 어울리는 색상·소재 선택부터 실측, 시공까지 한일블라인드&커튼이 원스톱으로 진행했습니다.',
+      },
+    ],
+  },
 ]
 
 export const history = [

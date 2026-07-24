@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { X, MapPin, Calendar, Package } from 'lucide-react'
+import { X, MapPin, Calendar, Package, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { references, type Reference } from '@/lib/site-data'
 
@@ -147,6 +148,14 @@ export function ReferenceGallery() {
                   <Calendar className="size-4 text-primary" /> {selected.date}
                 </div>
               </dl>
+              {selected.slug && (
+                <Link
+                  href={`/references/${selected.slug}`}
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                >
+                  시공 스토리 자세히 보기 <ArrowRight className="size-4" />
+                </Link>
+              )}
             </div>
           </div>
         </div>
