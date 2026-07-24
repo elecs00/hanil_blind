@@ -15,13 +15,15 @@ const filters = [
 ] as const
 
 // Expand the base list to showcase 30 years of installation history.
-const allRefs: Reference[] = Array.from({ length: 3 }).flatMap((_, batch) =>
-  references.map((r) => ({
-    ...r,
-    id: r.id + batch * 100,
-    date: batch === 0 ? r.date : `2025.${String(12 - batch * 3).padStart(2, '0')}`,
-  })),
-)
+const allRefs: Reference[] = Array.from({ length: 3 })
+  .flatMap((_, batch) =>
+    references.map((r) => ({
+      ...r,
+      id: r.id + batch * 100,
+      date: batch === 0 ? r.date : `2025.${String(12 - batch * 3).padStart(2, '0')}`,
+    })),
+  )
+  .sort((a, b) => b.date.localeCompare(a.date))
 
 const PAGE = 6
 
